@@ -1,11 +1,7 @@
-Here’s the updated README file for your E_Commerce_Follow_Along project with Milestone 9 included:  
-
----
-
 # 📌 Project Name: E_Commerce_Follow_Along  
 
 ## 🚀 Overview  
-This project is an e-commerce website developed through a series of milestones, progressively adding features to build a complete and functional application.  
+This project is an e-commerce website developed through a series of milestones, progressively adding features to build a complete and functional application.
 
 ## 📚 Table of Contents  
 - [Overview](#-overview)  
@@ -20,6 +16,7 @@ This project is an e-commerce website developed through a series of milestones, 
   - [Milestone 7: User Login & Authentication](#milestone-7-user-login--authentication)  
   - [Milestone 8: Product Card Component & Homepage Layout](#milestone-8-product-card-component--homepage-layout)  
   - [Milestone 9: Product Input Form](#milestone-9-product-input-form)  
+  - [Milestone 10: Product Schema & Endpoint Creation](#milestone-10-product-schema--endpoint-creation)  
 - [How to Run the Project](#-how-to-run-the-project)  
 - [Next Steps](#-next-steps)  
 - [Contributing](#-contributing)  
@@ -151,24 +148,47 @@ This project is an e-commerce website developed through a series of milestones, 
 
 ---
 
+### Milestone 10: Product Schema & Endpoint Creation  
+✅ Goals:  
+1. Product Schema Creation:  
+   - Designed a Mongoose schema for product details including name, description, price, and image URL.  
+   - Ensured each field has proper validation (e.g., required fields, correct data types).  
+2. Endpoint Creation:  
+   - Built a POST endpoint to receive product data.  
+   - Validated and saved the product details to MongoDB.  
+3. Why Validation?  
+   - Ensures that only valid data is saved in the database, maintaining data integrity and preventing errors.  
+4. Security Enhancements:  
+   - Implemented additional validation and data integrity measures to ensure accurate and secure data storage.  
+5. Next Steps (Optional):  
+   - Experiment with adding features such as admin access control to allow only admins to upload products or creating user profiles with roles for managing the shop.  
+
+---
+
 ## ▶ How to Run the Project  
 1. Clone the repository:  
-   bash
-   git clone https://github.com/your-username/E_Commerce_Follow_Along.git
-   cd E_Commerce_Follow_Along
+   bash  
+   git clone https://github.com/your-username/E_Commerce_Follow_Along.git  
+   cd E_Commerce_Follow_Along  
+     
    
 2. Install dependencies for both frontend and backend:  
-   bash
-   cd frontend && npm install
-   cd ../backend && npm install
+   bash  
+   cd frontend && npm install  
+   cd ../backend && npm install  
+     
    
 3. Run the backend server:  
-   bash
-   npm start
+   bash  
+   npm start  
+     
    
 4. Run the frontend application:  
-   bash
-   cd frontend
-   npm start
+   bash  
+   cd frontend  
+   npm start  
+     
    
-5. Open http://localhost:3000/ in your browser.
+5. Open [http://localhost:3000/](http://localhost:3000/) in your browser.  
+
+---
