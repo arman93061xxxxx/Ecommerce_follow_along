@@ -236,26 +236,3 @@ This project is an e-commerce website developed through a series of milestones, 
 
 ---
 
-### Milestone 14: Delete Product Functionality
-
-✅ Goals:
-
-#### 1️⃣ Backend - Delete Product Endpoint
-- Created an endpoint that allows deletion of a product using its specific ID.
-- Utilized Express.js and Mongoose to handle delete operations securely and efficiently.
-
-#### 2️⃣ Frontend - Delete Button Integration
-- Added a Delete button to each product card.
-- When clicked, the product ID is sent to the server endpoint to trigger the deletion.
-
-#### 3️⃣ User Experience Enhancement
-- Provided confirmation prompts to avoid accidental deletions.
-- Implemented smooth transitions and updates to the UI when a product is deleted.
-
-#### 4️⃣ Submission Steps
-- ✅ Pushed the updated code to the GitHub repository.
-- ✅ Updated the README.md file with Milestone 14 details.
-- ✅ Shared the repository link for submission.
-
----
-
