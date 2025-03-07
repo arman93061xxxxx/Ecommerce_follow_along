@@ -236,7 +236,6 @@ This project is an e-commerce website developed through a series of milestones, 
 - ✅ Shared the repository link for submission.
 
 ---
-
 ### Milestone 14: Delete Product Functionality
 
 ✅ Goals:
