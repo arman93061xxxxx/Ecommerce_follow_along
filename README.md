@@ -236,4 +236,113 @@ This project is an e-commerce website developed through a series of milestones, 
 - ✅ Shared the repository link for submission.
 
 ---
+### Milestone 14: Delete Product Functionality
 
+✅ Goals:
+
+#### 1️⃣ Backend - Delete Product Endpoint
+- Created an endpoint that allows deletion of a product using its specific ID.
+- Utilized Express.js and Mongoose to handle delete operations securely and efficiently.
+
+#### 2️⃣ Frontend - Delete Button Integration
+- Added a Delete button to each product card.
+- When clicked, the product ID is sent to the server endpoint to trigger the deletion.
+
+#### 3️⃣ User Experience Enhancement
+- Provided confirmation prompts to avoid accidental deletions.
+- Implemented smooth transitions and updates to the UI when a product is deleted.
+
+#### 4️⃣ Submission Steps
+- ✅ Pushed the updated code to the GitHub repository.
+- ✅ Updated the README.md file with Milestone 14 details.
+- ✅ Shared the repository link for submission.
+
+---
+
+### Milestone 15: Navbar Component & Navigation
+
+✅ Goals:
+
+#### 1️⃣ Creating the Navbar Component
+- Designed a responsive Navbar with navigation links for:
+  - Home
+  - My Products
+  - Add Product
+  - Cart
+- Ensured consistency across all pages for a seamless experience.
+
+#### 2️⃣ Implementing Reusability
+- Used the Navbar across all screens to maintain a uniform layout.
+- Optimized component structure for easy scalability.
+
+#### 3️⃣ Enhancing Responsiveness
+- Used CSS Flexbox/Grid & Tailwind CSS to make the Navbar adaptable to different screen sizes.
+- Implemented hamburger menu for mobile users.
+
+#### 4️⃣ Submission Steps
+- ✅ Pushed the updated code to the GitHub repository.
+- ✅ Updated the README.md file with Milestone 15 details.
+- ✅ Shared the repository link for submission.
+
+---
+
+### Milestone 16: Product Info Page  
+
+✅ Goals:  
+
+#### 1️⃣ Creating the Product Info Page  
+- Designed a dedicated page to display detailed product information, including:  
+  - Product Name  
+  - Description  
+  - Price  
+  - Image(s)  
+
+#### 2️⃣ Adding Quantity Selection & "Add to Cart" Button  
+- Implemented a quantity selector to allow users to choose the desired quantity.  
+- Added an "Add to Cart" button to store selected items in the cart.  
+
+#### 3️⃣ Dynamic Routing for Product Details  
+- Utilized React Router to create dynamic routes for each product.  
+- Fetched product details based on the product ID from the URL.  
+
+#### 4️⃣ Enhancing User Experience  
+- Ensured mobile responsiveness for smooth browsing on all devices.  
+- Implemented loading indicators for better user experience.  
+
+#### 5️⃣ Submission Steps  
+- ✅ Pushed the updated code to the GitHub repository.  
+- ✅ Updated the README.md file with Milestone 16 details.  
+- ✅ Shared the repository link for submission.  
+
+---
+
+### Milestone 17: Add to Cart Functionality  
+
+✅ Goals:  
+
+#### 1️⃣ Update User Schema for Cart Functionality  
+- Modified the user schema to include a cart field.  
+- Structured the cart field to store an array of product objects containing:  
+  - Product ID  
+  - Name  
+  - Price  
+  - Quantity  
+
+#### 2️⃣ Backend - Add to Cart Endpoint  
+- Created an endpoint to receive product details and store them in the user's cart.  
+- Ensured secure handling of requests and efficient database updates using MongoDB & Mongoose.  
+
+#### 3️⃣ Frontend - Add to Cart Integration  
+- Connected the "Add to Cart" button from the Product Info Page to the backend API.  
+- Stored cart data in the database and updated the UI dynamically.  
+
+#### 4️⃣ User Experience Enhancements  
+- Implemented a notification system to confirm when a product is added to the cart.  
+- Ensured real-time cart updates without needing to refresh the page.  
+
+#### 5️⃣ Submission Steps  
+- ✅ Pushed the updated code to the GitHub repository.  
+- ✅ Updated the README.md file with Milestone 17 details.  
+- ✅ Shared the repository link for submission.  
+
+---
