@@ -1,11 +1,27 @@
-// Import the ErrorHandler class from the utils/ErrorHandler module
-// This is used for creating and throwing custom errors
 const ErrorHandler = require("../utils/ErrorHandler");
-
-// Import the catchAsyncErrors utility
-// This is a middleware to handle errors in asynchronous functions automatically
 const catchAsyncErrors = require("./catchAsyncError");
-
-// Import the jsonwebtoken (JWT) library
-// This library is used for creating, signing, and verifying JSON Web Tokens
 const jwt = require("jsonwebtoken");
+const User = require("../model/User");
+
+const auth = catchAsyncErrors(async (req, res, next) => {
+  const { token } = req.cookies;
+
+  if (!token) {
+    return next(new ErrorHandler("Please login to access this resource", 401));
+  }
+
+  const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
+  if (!decoded) {
+    return next(new ErrorHandler("Invalid token", 401));
+  }
+
+  const user = await User.findById(decoded.id);
+  if (!user) {
+    return next(new ErrorHandler("User not found", 404));
+  }
+
+  req.user = user;
+  next();
+});
+
+module.exports = auth;

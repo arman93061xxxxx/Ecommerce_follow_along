@@ -1,99 +1,61 @@
-const express = require("express");
-const path = require("path");
-const fs = require("fs");
-const User = require("../model/user");
-const router = express.Router();
-const { upload } = require("../multer");
 const ErrorHandler = require("../utils/ErrorHandler");
 const catchAsyncErrors = require("../middleware/catchAsyncError");
-// const jwt = require("jsonwebtoken");
-// const sendMail = require("../utils/sendMail");
-const bcrypt = require("bcryptjs");
-require("dotenv").config();
+const User = require("../model/User");
 
-router.post(
-    "/create-user",
-    upload.single("file"), // Expect file to be named "file"
-    catchAsyncErrors(async (req, res, next) => {
-      console.log("Creating user...");
-      const { name, email, password } = req.body;
-  
-      const userEmail = await User.findOne({ email });
-      if (userEmail) {
-        if (req.file) {
-          const filepath = path.join(__dirname, "../uploads", req.file.filename);
-          try {
-            fs.unlinkSync(filepath); // Delete the file if user already exists
-          } catch (err) {
-            console.log("Error removing file:", err);
-            return res.status(500).json({ message: "Error removing file" });
-          }
-        }
-        return next(new ErrorHandler("User already exists", 400));
-      }
-  
-      let fileUrl = "";
-      if (req.file) {
-        fileUrl = path.join("uploads", req.file.filename); // Construct file URL
-      }
-  
-      const hashedPassword = await bcrypt.hash(password, 10);
-      const user = await User.create({
-        name,
-        email,
-        password: hashedPassword,
-        avatar: {
-          public_id: req.file?.filename || "",
-          url: fileUrl,
-        },
-      });
-  
-      res.status(201).json({ success: true, user });
-    })
-  );
-
-  router.post("/login", catchAsyncErrors(async (req, res, next) => {
-    console.log("Logging in user...");
-    const { email, password } = req.body;
-    if (!email || !password) {
-        return next(new ErrorHandler("Please provide email and password", 400));
-    }
-    const user = await User.findOne({ email }).select("+password");
-    if (!user) {
-        return next(new ErrorHandler("Invalid Email or Password", 401));
-    }
-    const isPasswordMatched = await bcrypt.compare(password, user.password);
-    console.log("At Auth", "Password: ", password, "Hash: ", user.password);
-    console.log(isPasswordMatched)
-    if (!isPasswordMatched) {
-        return next(new ErrorHandler("Invalid Email or Password", 401));
-    }
-    user.password = undefined;
-    res.status(200).json({
-        success: true,
-        user,
-    });
-}));
-router.get("/profile", catchAsyncErrors(async (req, res, next) => {
-  const { email } = req.query;
-  if (!email) {
-      return next(new ErrorHandler("Please provide an email", 400));
+exports.getUserProfile = catchAsyncErrors(async (req, res, next) => {
+  if (!req.user) {
+    return next(new ErrorHandler("User not authenticated", 401));
   }
-  const user = await User.findOne({ email });
+  const user = req.user;
+  res.status(200).json({
+    name: user.name,
+    email: user.email,
+    avatar: user.avatar,
+    addresses: user.addresses || [],
+  });
+});
+
+exports.addAddress = catchAsyncErrors(async (req, res, next) => {
+  const { addressType, address1, address2, city, country, zipCode } = req.body;
+  if (!addressType || !address1 || !city || !country || !zipCode) {
+    return next(new ErrorHandler("All fields except Address Line 2 are required", 400));
+  }
+  const allowedTypes = ["Home", "Work", "Other"];
+  if (!allowedTypes.includes(addressType)) {
+    return next(new ErrorHandler("Address Type must be Home, Work, or Other", 400));
+  }
+  if (isNaN(Number(zipCode))) {
+    return next(new ErrorHandler("ZIP Code must be a valid number", 400));
+  }
+  const newAddress = { addressType, address1, address2, city, country, zipCode: Number(zipCode) };
+  const user = await User.findById(req.user.id);
   if (!user) {
-      return next(new ErrorHandler("User not found", 404));
+    return next(new ErrorHandler("User not found", 404));
+  }
+  console.log(`Adding address for user ${req.user.id}:`, newAddress);
+  user.addresses.push(newAddress);
+  await user.save({ validateBeforeSave: false });
+  res.status(200).json({
+    success: true,
+    message: "Address added successfully",
+    user: {
+      name: user.name,
+      email: user.email,
+      avatar: user.avatar,
+      addresses: user.addresses,
+    },
+  });
+});
+
+exports.getAddresses = catchAsyncErrors(async (req, res, next) => {
+  const user = await User.findById(req.user.id);
+  if (!user) {
+    return next(new ErrorHandler("User not found", 404));
   }
   res.status(200).json({
-      success: true,
-      user: {
-          name: user.name,
-          email: user.email,
-          phoneNumber: user.phoneNumber,
-          avatarUrl: user.avatar.url
-      },
-      addresses: user.addresses,
+    success: true,
+    addresses: user.addresses || [],
   });
-}));
+});
 
-module.exports = router;
- 
+
