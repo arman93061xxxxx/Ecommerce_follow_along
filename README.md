@@ -500,3 +500,14 @@ By completing this milestone, we learned:
 - 🏠 Showed the selected address passed from the Select Address page.
 - 💰 Calculated and displayed the total cart value.
 - 🚀 Added a "Place Order" button (placeholder for future backend integration).
+
+---
+### 📜 Milestone 25: Backend Endpoint for Placing Orders
+✅ Tasks Completed:
+- 🌐 Created a `POST /api/v2/order/place` endpoint in `routes/order.js` and `controller/order.js`.
+- 🛠️ Implemented logic to retrieve user `_id` by email and create separate orders for each product with the same address.
+- 📦 Used the `Order` schema to store order details in MongoDB.
+- 🔗 Updated `server.js` to register the new order routes.
+- 🚀 Modified `OrderConfirmation.jsx` to call the endpoint with cart, address, and user email data.
+
+---
