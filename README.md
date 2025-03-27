@@ -493,3 +493,10 @@ By completing this milestone, we learned:
 - 🛠️ Created an `Order` model in `backend/model/Order.js` to store order details (user, products, address, total amount, status).
 
 ---
+### 📜 Milestone 24: Order Confirmation Page
+✅ Tasks Completed:
+- 📝 Created an `OrderConfirmation.jsx` page to display products being ordered, the selected delivery address, and the total cart value.
+- 🛒 Displayed all products from the cart with their names, prices, quantities, and totals.
+- 🏠 Showed the selected address passed from the Select Address page.
+- 💰 Calculated and displayed the total cart value.
+- 🚀 Added a "Place Order" button (placeholder for future backend integration).
