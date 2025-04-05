@@ -620,6 +620,7 @@ _Description:_ Deletes a product from the database using the provided ID.
 - 🔗 Handled COD and PayPal payments, redirecting to `/order-success` on completion.
 
 ---
+
 ### 📜 Milestone 31: Global State Management with Redux
 ✅ Tasks Completed:
 - 📝 Installed `react-redux`, `redux`, and `@reduxjs/toolkit` in the frontend folder.
@@ -629,3 +630,15 @@ _Description:_ Deletes a product from the database using the provided ID.
 - 📦 Wrapped the `App` component in a `Provider` in `frontend/src/index.js` to connect the store to the app.
 
 ---
+
+### 🛠️ Tech Stack
+
+# Frontend:
+⚛️ React.js / Next.js
+🎨 Tailwind CSS / Bootstrap
+🛠️ Redux for state management
+
+# Backend:
+🖥️ Node.js / Express.js
+🟢 MongoDB
+🔑 JWT Authentication
