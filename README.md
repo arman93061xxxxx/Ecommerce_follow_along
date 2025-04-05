@@ -612,3 +612,11 @@ _Description:_ Deletes a product from the database using the provided ID.
 - 🔗 Used existing PayPal sandbox accounts and obtained the Client ID for future integration.
 
 ---
+### 📜 Milestone 30: PayPal Payment Integration
+✅ Tasks Completed:
+- 📝 Installed `react-paypal-js` and integrated `PayPalScriptProvider` and `PayPalButtons` in `OrderConfirmation.jsx`.
+- 🌐 Used the PayPal Sandbox Client ID to enable online payments via PayPal API.
+- 🛠️ Updated the `Order` schema and `placeOrder` endpoint to store `paymentMethod` and `paymentDetails`.
+- 🔗 Handled COD and PayPal payments, redirecting to `/order-success` on completion.
+
+---
