@@ -520,3 +520,11 @@ By completing this milestone, we learned:
 - 🔗 Added the endpoint to return all user orders in the response.
 
 ---
+### 📜 Milestone 27: My Orders Frontend Page
+✅ Tasks Completed:
+- 📝 Created a `MyOrders.jsx` page to display all user orders.
+- 🌐 Sent a POST request to `/api/v2/order/orders` with the user’s email to fetch orders.
+- 🖥️ Displayed order details including products, address, status, and total amount.
+- 🚀 Added a "My Orders" link to the navbar for navigation.
+
+---
