@@ -639,6 +639,24 @@ _Description:_ Deletes a product from the database using the provided ID.
 
 
 ---
+## 📌 Milestone 33: JWT Token Creation & Cookie Storage
+
+### ✅ Tasks Completed:
+
+- 📥 Installed the `jsonwebtoken` package using NPM.
+- 🔐 Created a JWT token using the `sign` method with user's email and ID.
+- ⏳ Set the expiration of the JWT token using the `maxAge` property.
+- 🍪 Stored the generated JWT token inside a cookie and sent it with the HTTP response.
+- 🌐 Verified the cookie was stored in the browser for authentication purposes.
+### 📚 What I Learned:
+
+- How to securely generate and sign a JWT token in Node.js.
+- Best practices for storing JWT tokens using HTTP-only cookies.
+- Using cookies to persist user authentication across multiple pages/routes.
+
+---
+
+
 
 ### 🛠️ Tech Stack
 
