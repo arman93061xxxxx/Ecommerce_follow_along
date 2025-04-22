@@ -629,6 +629,15 @@ _Description:_ Deletes a product from the database using the provided ID.
 - 🔗 Defined a `setEmail` action in `userActions.js` to update the email state.
 - 📦 Wrapped the `App` component in a `Provider` in `frontend/src/index.js` to connect the store to the app.
 
+### 📜 Milestone 32: Accessing Global State (Email) Across Pages
+
+✅ Tasks Completed:
+- 📥 Used the `useDispatch()` hook in the **Login page** to store the email in Redux state.
+- 🔄 Accessed the stored email in other pages using `useSelector()`.
+- 📂 Continued use of `userSlice` for managing and updating the user’s email.
+- 🧪 Verified that the email remains available across all routes, proving the efficiency of Redux for global state handling.
+
+
 ---
 
 ### 🛠️ Tech Stack
