@@ -656,7 +656,26 @@ _Description:_ Deletes a product from the database using the provided ID.
 
 ---
 
+## Milestone 34: Validating JWT Token Stored in Cookies
+- ✅ Goals:
+# 1️⃣ Backend - JWT Token Validation
+  Extracted the JWT token from the browser’s cookie and sent it to the server.
+  Created a middleware function on the backend to validate the JWT token received from the client.
+  Ensured the server checks if the token is valid before granting access to protected routes.
+#  2️⃣ Frontend - Token Handling
+  Ensured that every page checks for the JWT token, preventing unauthorized access without login.
+  Implemented token validation across the application to ensure users are logged in before accessing 
+    protected resources.
+#  3️⃣ Enhancing Security and Authentication
+  Added robust token validation to secure the application and prevent unauthorized access.
+  Implemented the necessary steps to protect routes using JWT token validation on the server side.
+#  4️⃣ Submission Steps
+  ✅ Pushed the updated code to the GitHub repository.
+  ✅ Updated the README.md file with Milestone 34 details.
+  ✅ Shared the repository link for submission.
+  Good luck, Kalvians! 
 
+---
 
 ### 🛠️ Tech Stack
 
